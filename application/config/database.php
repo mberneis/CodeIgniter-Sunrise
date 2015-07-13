@@ -48,6 +48,9 @@
 $active_group = 'default';
 
 if (isset($_SERVER['APPLICATION_ID'])) $active_group='app_engine';
+if (isset($_SERVER['RDS_HOSTNAME'])) $active_group='beanstalk';
+
+
 syslog(LOG_INFO,"Using database group ".$active_group);
 error_log("Using database group ".$active_group);
 $active_record = TRUE;
@@ -68,7 +71,22 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-
+$db['beanstalk']['hostname'] = $_SERVER['RDS_HOSTNAME'];
+$db['beanstalk']['port']     = $_SERVER['RDS_PORT'];
+$db['beanstalk']['username'] = $_SERVER['RDS_USERNAME'];
+$db['beanstalk']['password'] = $_SERVER['RDS_PASSWORD'];
+$db['beanstalk']['database'] = $_SERVER['RDS_DB_NAME'];
+$db['beanstalk']['dbdriver'] = 'mysql';
+$db['beanstalk']['dbprefix'] = '';
+$db['beanstalk']['pconnect'] = FALSE;
+$db['beanstalk']['db_debug'] = TRUE;
+$db['beanstalk']['cache_on'] = FALSE;
+$db['beanstalk']['cachedir'] = '';
+$db['beanstalk']['char_set'] = 'utf8';
+$db['beanstalk']['dbcollat'] = 'utf8_general_ci';
+$db['beanstalk']['swap_pre'] = '';
+$db['beanstalk']['autoinit'] = TRUE;
+$db['beanstalk']['stricton'] = FALSE;
 
 $db['app_engine']['hostname'] = ':/cloudsql/fetchid-1004:fetchid';
 $db['app_engine']['username'] = '';

@@ -11,3 +11,8 @@ Icon?
 ehthumbs.db
 Thumbs.db
 .dropbox
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
