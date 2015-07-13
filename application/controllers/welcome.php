@@ -11,7 +11,7 @@ class Welcome extends CI_Controller {
 
   function testdb() {
   	$this->load->database();
-  	$res = $this->db->query("show databases");
+  	$res = $this->db->query("show tables");
   	print "<pre>";
   	print_r ($res->result());
   	exit();
