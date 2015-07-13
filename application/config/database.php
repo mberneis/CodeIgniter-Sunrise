@@ -51,8 +51,8 @@ if (isset($_SERVER['APPLICATION_ID'])) $active_group='app_engine';
 if (isset($_SERVER['RDS_HOSTNAME'])) $active_group='beanstalk';
 
 
-syslog(LOG_INFO,"Using database group ".$active_group);
-error_log("Using database group ".$active_group);
+syslog(LOG_INFO,"[sys_log] database group ".$active_group);
+error_log("[error_log] database group ".$active_group);
 $active_record = TRUE;
 
 $db['default']['hostname'] = '127.0.0.1';
