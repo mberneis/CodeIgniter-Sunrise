@@ -46,12 +46,16 @@
 */
 
 $active_group = 'default';
+
+if (isset($_SERVER['APPLICATION_ID'])) $active_group='app_engine';
+syslog(LOG_INFO,"Using database group ".$active_group);
+error_log("Using database group ".$active_group);
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = '127.0.0.1';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
+$db['default']['database'] = 'nanochip';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -64,6 +68,23 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+
+
+$db['app_engine']['hostname'] = ':/cloudsql/fetchid-1004:fetchid';
+$db['app_engine']['username'] = '';
+$db['app_engine']['password'] = '';
+$db['app_engine']['database'] = '';
+$db['app_engine']['dbdriver'] = 'mysql';
+$db['app_engine']['dbprefix'] = '';
+$db['app_engine']['pconnect'] = FALSE;
+$db['app_engine']['db_debug'] = TRUE;
+$db['app_engine']['cache_on'] = FALSE;
+$db['app_engine']['cachedir'] = '';
+$db['app_engine']['char_set'] = 'utf8';
+$db['app_engine']['dbcollat'] = 'utf8_general_ci';
+$db['app_engine']['swap_pre'] = '';
+$db['app_engine']['autoinit'] = TRUE;
+$db['app_engine']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

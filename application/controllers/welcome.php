@@ -9,4 +9,17 @@ class Welcome extends CI_Controller {
     $this->load->view('footer');
   }
 
+  function testdb() {
+  	$this->load->database();
+  	$res = $this->db->query("show databases");
+  	print "<pre>";
+  	print_r ($res->result());
+  	exit();
+  }
+
+  function info() {
+    phpinfo();
+    exit();
+  }
+
 }
