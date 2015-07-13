@@ -71,11 +71,11 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-$db['beanstalk']['hostname'] = $_SERVER['RDS_HOSTNAME'];
-$db['beanstalk']['port']     = $_SERVER['RDS_PORT'];
-$db['beanstalk']['username'] = $_SERVER['RDS_USERNAME'];
-$db['beanstalk']['password'] = $_SERVER['RDS_PASSWORD'];
-$db['beanstalk']['database'] = $_SERVER['RDS_DB_NAME'];
+$db['beanstalk']['hostname'] = @$_SERVER['RDS_HOSTNAME'];
+$db['beanstalk']['port']     = @$_SERVER['RDS_PORT'];
+$db['beanstalk']['username'] = @$_SERVER['RDS_USERNAME'];
+$db['beanstalk']['password'] = @$_SERVER['RDS_PASSWORD'];
+$db['beanstalk']['database'] = @$_SERVER['RDS_DB_NAME'];
 $db['beanstalk']['dbdriver'] = 'mysql';
 $db['beanstalk']['dbprefix'] = '';
 $db['beanstalk']['pconnect'] = FALSE;
