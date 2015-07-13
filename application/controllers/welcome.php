@@ -12,7 +12,7 @@ class Welcome extends CI_Controller {
   function testdb() {
   	$this->load->database();
   	$res = $this->db->query("show tables");
-  	print "<pre>";
+  	print "Tables:<pre>\n";
   	print_r ($res->result());
   	exit();
   }
