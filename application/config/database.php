@@ -49,6 +49,7 @@ $active_group = 'default';
 
 if (isset($_SERVER['APPLICATION_ID'])) $active_group='app_engine';
 if (isset($_SERVER['RDS_HOSTNAME'])) $active_group='beanstalk';
+if (isset($_SERVER['DB_HOST'])) $active_group='engineyard';
 
 
 syslog(LOG_INFO,"[sys_log] database group ".$active_group);
@@ -103,6 +104,22 @@ $db['app_engine']['dbcollat'] = 'utf8_general_ci';
 $db['app_engine']['swap_pre'] = '';
 $db['app_engine']['autoinit'] = TRUE;
 $db['app_engine']['stricton'] = FALSE;
+
+$db['engineyard']['hostname'] = @$_SERVER['DB_HOST'];
+$db['engineyard']['username'] = @$_SERVER['DB_USER'];
+$db['engineyard']['password'] = @$_SERVER['DB_PASS'];
+$db['engineyard']['database'] = @$_SERVER['DB_NAME'];
+$db['engineyard']['dbdriver'] = 'mysql';
+$db['engineyard']['dbprefix'] = '';
+$db['engineyard']['pconnect'] = FALSE;
+$db['engineyard']['db_debug'] = TRUE;
+$db['engineyard']['cache_on'] = FALSE;
+$db['engineyard']['cachedir'] = '';
+$db['engineyard']['char_set'] = 'utf8';
+$db['engineyard']['dbcollat'] = 'utf8_general_ci';
+$db['engineyard']['swap_pre'] = '';
+$db['engineyard']['autoinit'] = TRUE;
+$db['engineyard']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
