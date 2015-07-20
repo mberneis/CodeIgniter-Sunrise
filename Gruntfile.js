@@ -78,4 +78,5 @@ module.exports = function (grunt) {
    * Tasks
    */
   grunt.registerTask('default', ['concat', 'less', 'watch']);
+  grunt.registerTask('build', ['concat', 'less']);
 };
