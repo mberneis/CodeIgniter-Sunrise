@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="hero-unit">
-		<h1>Welcome to CodeIgniter Sunrise v1.0</h1>
+		<h1>Welcome to CodeIgniter Sunrise v1.0 abc</h1>
 		<a href="welcome/testdb">Test DB</a> |
 		<a href="welcome/info">Info</a>
 		<p><?php 
