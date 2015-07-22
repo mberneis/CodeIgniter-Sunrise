@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:/opt/nodejs/0.10.30/bin:/usr/local/bin
+export PATH=$PATH:/opt/nodejs/current/bin:/usr/local/bin
 npm install
 bower install
 grunt build
